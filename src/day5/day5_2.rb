@@ -19,7 +19,7 @@ class BoardingPass
   attr_reader :id
 
   def initialize(item)
-    @row_code = item[0..ROW_CODE_LENGTH-1].split('')
+    @row_code = item[0..ROW_CODE_LENGTH - 1].split('')
     @column_code = item[ROW_CODE_LENGTH..-1].split('')
     @row = get_row_number
     @column = get_column_number
@@ -43,11 +43,11 @@ class BoardingPass
   end
 
   def get_array_of_rows
-    Array(0..NUMBER_OF_ROWS-1)
+    Array(0..NUMBER_OF_ROWS - 1)
   end
 
   def get_array_of_columns
-    Array(0..NUMBER_OF_COLUMNS-1)
+    Array(0..NUMBER_OF_COLUMNS - 1)
   end
 
   def get_row_number
@@ -82,9 +82,9 @@ class BoardingPass
 end
 
 ids = input
-           .map { |line| BoardingPass.new(line)}
-           .map { |pass| pass.id.to_i }
-           .sort
+        .map { |line| BoardingPass.new(line) }
+        .map { |pass| pass.id.to_i }
+        .sort
 
 output = (ids.min..ids.max).to_a - ids
 

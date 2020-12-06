@@ -21,8 +21,8 @@ end
 input = File.readlines('../../res/day2/day2.input')
 
 output = input
-         .map { |item| PasswordPolicy.new(item) }
-         .filter(&:is_valid?)
-         .count
+           .map { |item| PasswordPolicy.new(item) }
+           .filter(&:is_valid?)
+           .count
 
 puts output
